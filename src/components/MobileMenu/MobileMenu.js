@@ -7,6 +7,7 @@ import UnstyledButton from '../UnstyledButton';
 import Icon from '../Icon';
 import VisuallyHidden from '../VisuallyHidden';
 import {HeaderNavLink} from "../Header";
+import {QUERIES} from "../../constants";
 
 const MobileMenu = ({isOpen, onDismiss}) => {
     if (!isOpen) {
@@ -65,6 +66,10 @@ const Overlay = styled(DialogOverlay)`
   left: 0;
   bottom: 0;
   background: hsl(var(--gray-700-hue) / 0.8);
+  display: none;
+  @media ${QUERIES.tabletAndDown} {
+    display: revert;
+  }
 `
 
 const Content = styled(DialogContent)`
